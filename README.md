@@ -143,17 +143,6 @@ Check the following locations for error logs:
 5. Regular database backups
 6. Monitor access logs
 
-## Support
-
-For issues and questions:
-1. Check the troubleshooting section above
-2. Review CodeIgniter documentation: https://codeigniter.com/docs
-3. Check PHP and MySQL documentation for server-related issues
-
-## License
-
-This project is provided as-is for educational and commercial use.
-
 ## Version Information
 
 - **CodeIgniter Version**: 3.x
@@ -161,5 +150,3 @@ This project is provided as-is for educational and commercial use.
 - **Database**: MySQL 5.5+
 
 ---
-
-**Note**: This is a complete inventory management solution. Make sure to customize it according to your specific business requirements.
