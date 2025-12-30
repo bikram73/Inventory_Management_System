@@ -1,0 +1,186 @@
+# Inventory Management System - Requirements
+
+## Server Requirements
+
+### PHP Requirements
+- PHP 5.6.0 or newer (PHP 7.4+ recommended for better performance and security)
+- PHP Extensions:
+  - mysqli (MySQL Improved Extension)
+  - mbstring (Multibyte String)
+  - openssl (OpenSSL)
+  - json (JSON)
+  - curl (cURL)
+  - gd (GD Library for image processing)
+  - zip (ZIP archive)
+  - xml (XML Parser)
+  - session (Session handling)
+
+### Web Server Requirements
+- Apache 2.4+ with mod_rewrite enabled
+  OR
+- Nginx 1.10+
+- URL rewriting capability
+
+### Database Requirements
+- MySQL 5.5+ or MariaDB 10.0+
+- Database user with full privileges (CREATE, SELECT, INSERT, UPDATE, DELETE, ALTER, DROP)
+
+### System Requirements
+- Minimum 512MB RAM (1GB+ recommended)
+- 100MB+ free disk space
+- Modern web browser support:
+  - Chrome 60+
+  - Firefox 55+
+  - Safari 11+
+  - Edge 79+
+
+## PHP Configuration Requirements
+
+### Required PHP Settings
+```ini
+; Minimum memory limit
+memory_limit = 128M
+
+; Maximum execution time
+max_execution_time = 300
+
+; File upload settings
+file_uploads = On
+upload_max_filesize = 10M
+post_max_size = 10M
+
+; Session settings
+session.auto_start = 0
+session.use_cookies = 1
+
+; Error reporting (disable in production)
+display_errors = Off
+log_errors = On
+
+; Timezone (adjust as needed)
+date.timezone = "UTC"
+```
+
+### Required PHP Extensions
+```
+Core Extensions:
+- Core
+- date
+- filter
+- hash
+- pcre
+- Reflection
+- SPL
+- standard
+
+Database Extensions:
+- mysqli (required for MySQL connectivity)
+- pdo_mysql (optional, for PDO support)
+
+Additional Extensions:
+- mbstring (for multibyte string handling)
+- openssl (for encryption and security)
+- json (for JSON data handling)
+- curl (for HTTP requests)
+- gd (for image processing)
+- zip (for file compression)
+- xml (for XML processing)
+- session (for session management)
+```
+
+## Development Environment Setup
+
+### Local Development (XAMPP/WAMP/MAMP)
+1. Install XAMPP/WAMP/MAMP with PHP 7.4+
+2. Enable required PHP extensions
+3. Start Apache and MySQL services
+4. Create database and import SQL file
+5. Configure application settings
+
+### Production Environment
+1. Linux server (Ubuntu 18.04+ or CentOS 7+)
+2. Apache/Nginx web server
+3. MySQL/MariaDB database server
+4. PHP 7.4+ with required extensions
+5. SSL certificate (recommended)
+6. Regular backup system
+
+## Security Requirements
+
+### File Permissions (Linux/Unix)
+```bash
+# Application directories
+chmod 755 application/
+chmod 755 application/cache/
+chmod 755 application/logs/
+chmod 644 application/config/*.php
+
+# Web accessible files
+chmod 644 index.php
+chmod 644 .htaccess
+
+# Restrict access to sensitive directories
+chmod 700 application/config/
+chmod 700 DATABASE\ FILE/
+```
+
+### Security Headers (Apache .htaccess)
+```apache
+# Security headers
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+Header always set Content-Security-Policy "default-src 'self'"
+```
+
+## Optional Enhancements
+
+### Performance Optimization
+- PHP OPcache enabled
+- MySQL query cache enabled
+- Gzip compression enabled
+- CDN for static assets
+- Redis/Memcached for session storage
+
+### Monitoring Tools
+- PHP error logging
+- MySQL slow query log
+- Web server access logs
+- Application performance monitoring
+
+### Backup Requirements
+- Daily database backups
+- Weekly full system backups
+- Offsite backup storage
+- Backup restoration testing
+
+## Browser Compatibility
+
+### Supported Browsers
+- Google Chrome 60+
+- Mozilla Firefox 55+
+- Safari 11+
+- Microsoft Edge 79+
+- Opera 47+
+
+### Mobile Support
+- iOS Safari 11+
+- Chrome Mobile 60+
+- Samsung Internet 7+
+
+## Network Requirements
+
+### Ports
+- HTTP: Port 80
+- HTTPS: Port 443 (recommended)
+- MySQL: Port 3306 (internal)
+
+### Firewall Configuration
+- Allow inbound HTTP/HTTPS traffic
+- Restrict MySQL port to localhost only
+- Block direct access to application directories
+
+---
+
+**Note**: These requirements ensure optimal performance and security for the Inventory Management System. Adjust based on your specific hosting environment and business needs.
