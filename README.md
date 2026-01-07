@@ -1,7 +1,7 @@
 # Inventory Management System
 
 A comprehensive inventory management system built with CodeIgniter PHP framework. This system allows you to manage products, categories, warehouses, orders, and generate reports for your business inventory.
- 
+
 ## Features
 
 - **Dashboard**: Overview of inventory statistics and key metrics
